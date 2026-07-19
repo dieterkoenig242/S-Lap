@@ -17,6 +17,7 @@ Set-Konfigurator.
 
 - Kartusche: **4 €**
 - Starter-Set mit Akku: **10 €**
+- Nachfüllflasche mit Slab-Logo: **6 €** (Preis in `src/data/flavors.ts` anpassbar)
 - Pod-System wiederauffüllbar, Platz für 2 Liquids
 
 ## Tech-Stack

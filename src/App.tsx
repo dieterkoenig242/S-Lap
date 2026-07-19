@@ -3,11 +3,17 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import FlavorSection from './components/FlavorSection';
+import RefillSection from './components/RefillSection';
 import ShopSection from './components/ShopSection';
 import AgeGate, { isAgeVerified } from './components/AgeGate';
 import CookieBanner from './components/CookieBanner';
-import { flavors, heroGradient, shopGradient } from './data/flavors';
-import type { Cart } from './cart';
+import {
+  flavors,
+  heroGradient,
+  refillGradient,
+  shopGradient,
+} from './data/flavors';
+import { cartItemCount, emptyEntry, type Cart, type CartKind } from './cart';
 
 export default function App() {
   const [verified, setVerified] = useState(isAgeVerified);
@@ -17,9 +23,9 @@ export default function App() {
   const onActive = useCallback((id: string) => setActiveSection(id), []);
 
   const changeCart = useCallback(
-    (flavorId: string, kind: 'cartridges' | 'kits', delta: number) => {
+    (flavorId: string, kind: CartKind, delta: number) => {
       setCart((prev) => {
-        const entry = prev[flavorId] ?? { cartridges: 0, kits: 0 };
+        const entry = prev[flavorId] ?? emptyEntry;
         const next = { ...entry, [kind]: Math.max(0, entry[kind] + delta) };
         return { ...prev, [flavorId]: next };
       });
@@ -31,15 +37,12 @@ export default function App() {
   const gradient =
     activeSection === 'hero'
       ? heroGradient
-      : activeSection === 'shop'
-        ? shopGradient
-        : (activeFlavor?.gradient ?? heroGradient);
+      : activeSection === 'refill'
+        ? refillGradient
+        : activeSection === 'shop'
+          ? shopGradient
+          : (activeFlavor?.gradient ?? heroGradient);
   const theme = activeFlavor?.theme ?? 'dark';
-
-  const cartCount = Object.values(cart).reduce(
-    (sum, e) => sum + e.cartridges + e.kits,
-    0,
-  );
 
   return (
     <>
@@ -58,7 +61,7 @@ export default function App() {
         </AnimatePresence>
       </div>
 
-      <Navbar theme={theme} cartCount={cartCount} />
+      <Navbar theme={theme} cartCount={cartItemCount(cart)} />
 
       <main>
         <HeroSection onActive={onActive} />
@@ -71,6 +74,10 @@ export default function App() {
             onAddStarterKit={(id) => changeCart(id, 'kits', 1)}
           />
         ))}
+        <RefillSection
+          onActive={onActive}
+          onAddBottle={(id) => changeCart(id, 'bottles', 1)}
+        />
         <ShopSection cart={cart} onChange={changeCart} onActive={onActive} />
       </main>
 

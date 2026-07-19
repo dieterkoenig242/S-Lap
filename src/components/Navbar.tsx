@@ -43,6 +43,12 @@ export default function Navbar({ theme, cartCount }: NavbarProps) {
             Sorten
           </a>
           <a
+            href="#refill"
+            className="hidden text-sm font-light tracking-[0.2em] uppercase opacity-80 transition-opacity hover:opacity-100 md:inline"
+          >
+            Refill
+          </a>
+          <a
             href="#shop"
             className="relative flex items-center gap-2 text-sm font-light tracking-[0.2em] uppercase opacity-80 transition-opacity hover:opacity-100"
           >

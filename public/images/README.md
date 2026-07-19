@@ -21,6 +21,12 @@ fehlt, wird automatisch ein SVG-Platzhalter angezeigt.
 | `flavors/doppelbass.jpg` | DJ mit Boxen („Doppelbass") |
 | `flavors/menthol.jpg` | Sauna / Frost-Motiv (Menthol) |
 
+## Nachfüllflasche
+
+| Datei | Inhalt |
+|---|---|
+| `refill-bottle.jpg` | Foto der Nachfüllflasche mit Slab-Logo (freigestellt oder dunkler Hintergrund) |
+
 **Tipp:** Für beste Performance die Bilder vorher als WebP oder komprimiertes
 JPG exportieren (max. ~1600px Höhe). Wenn du WebP nutzt, entweder die Datei
 trotzdem `.jpg` nennen oder die Pfade in `src/data/flavors.ts` anpassen.

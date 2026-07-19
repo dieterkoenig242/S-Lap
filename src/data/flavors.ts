@@ -20,6 +20,8 @@ export interface Flavor {
 
 export const CARTRIDGE_PRICE = 4;
 export const STARTER_KIT_PRICE = 10;
+/** Nachfüllflasche mit Slab-Logo (Preis anpassbar) */
+export const BOTTLE_PRICE = 6;
 
 export const flavors: Flavor[] = [
   {
@@ -116,6 +118,9 @@ export const flavors: Flavor[] = [
 
 export const heroGradient =
   'radial-gradient(circle at center, #1E3A5F 0%, #0A1628 55%, #000000 100%)';
+
+export const refillGradient =
+  'radial-gradient(circle at center, #3AC6C6 0%, #10505A 50%, #041418 100%)';
 
 export const shopGradient =
   'radial-gradient(circle at center, #24344D 0%, #0C1524 55%, #020409 100%)';

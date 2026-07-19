@@ -1,18 +1,19 @@
 import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { Minus, Plus, BatteryCharging, Droplets } from 'lucide-react';
+import { Minus, Plus, BatteryCharging, Droplets, FlaskConical } from 'lucide-react';
 import Particles from './Particles';
 import {
+  BOTTLE_PRICE,
   CARTRIDGE_PRICE,
   STARTER_KIT_PRICE,
   flavors,
 } from '../data/flavors';
-import type { Cart } from '../cart';
+import { cartItemCount, emptyEntry, type Cart, type CartKind } from '../cart';
 
 interface ShopSectionProps {
   cart: Cart;
-  onChange: (flavorId: string, kind: 'cartridges' | 'kits', delta: number) => void;
+  onChange: (flavorId: string, kind: CartKind, delta: number) => void;
   onActive: (id: string) => void;
 }
 
@@ -29,14 +30,12 @@ export default function ShopSection({ cart, onChange, onActive }: ShopSectionPro
     return (
       sum +
       entry.cartridges * CARTRIDGE_PRICE +
-      entry.kits * STARTER_KIT_PRICE
+      entry.kits * STARTER_KIT_PRICE +
+      entry.bottles * BOTTLE_PRICE
     );
   }, 0);
 
-  const itemCount = Object.values(cart).reduce(
-    (sum, e) => sum + e.cartridges + e.kits,
-    0,
-  );
+  const itemCount = cartItemCount(cart);
 
   return (
     <section
@@ -58,8 +57,9 @@ export default function ShopSection({ cart, onChange, onActive }: ShopSectionPro
             Stell dir dein Set zusammen
           </h2>
           <p className="mt-3 text-sm font-light text-white/60 md:text-base">
-            Jede Kartusche {CARTRIDGE_PRICE} € · Starter-Set mit Akku{' '}
-            {STARTER_KIT_PRICE} € · Pod wiederauffüllbar mit 2 Liquids
+            Kartusche {CARTRIDGE_PRICE} € · Starter-Set mit Akku{' '}
+            {STARTER_KIT_PRICE} € · Nachfüllflasche mit Slab-Logo{' '}
+            {BOTTLE_PRICE} € · Pod wiederauffüllbar mit 2 Liquids
           </p>
         </motion.div>
 
@@ -72,7 +72,7 @@ export default function ShopSection({ cart, onChange, onActive }: ShopSectionPro
           className="mt-8 grid flex-1 grid-cols-1 gap-3 overflow-y-auto sm:grid-cols-2 lg:grid-cols-3"
         >
           {flavors.map((f) => {
-            const entry = cart[f.id] ?? { cartridges: 0, kits: 0 };
+            const entry = cart[f.id] ?? emptyEntry;
             return (
               <div
                 key={f.id}
@@ -105,6 +105,13 @@ export default function ShopSection({ cart, onChange, onActive }: ShopSectionPro
                     value={entry.kits}
                     onDec={() => onChange(f.id, 'kits', -1)}
                     onInc={() => onChange(f.id, 'kits', 1)}
+                  />
+                  <QuantityRow
+                    icon={<FlaskConical size={14} />}
+                    label={`Nachfüllflasche · ${BOTTLE_PRICE} €`}
+                    value={entry.bottles}
+                    onDec={() => onChange(f.id, 'bottles', -1)}
+                    onInc={() => onChange(f.id, 'bottles', 1)}
                   />
                 </div>
               </div>

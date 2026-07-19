@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 600 1000">
+  <defs>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#EAFBFF" stop-opacity="0.55"/>
+      <stop offset="45%" stop-color="#BDEFF5" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#6BB8C9" stop-opacity="0.55"/>
+    </linearGradient>
+    <linearGradient id="liquid" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3AC6C6"/>
+      <stop offset="100%" stop-color="#0E5460"/>
+    </linearGradient>
+    <radialGradient id="shine" cx="35%" cy="25%" r="70%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Tropfspitze / Deckel -->
+  <rect x="270" y="40" width="60" height="50" rx="12" fill="#0A2A33"/>
+  <path d="M282 90 L318 90 L326 150 L274 150 Z" fill="#12414D"/>
+  <rect x="240" y="150" width="120" height="46" rx="10" fill="#0A2A33"/>
+
+  <!-- Flaschenkörper -->
+  <path d="M240 196 L360 196 L400 280 L400 900 Q400 950 350 950 L250 950 Q200 950 200 900 L200 280 Z"
+        fill="url(#liquid)"/>
+  <path d="M240 196 L360 196 L400 280 L400 900 Q400 950 350 950 L250 950 Q200 950 200 900 L200 280 Z"
+        fill="url(#glass)"/>
+  <path d="M240 196 L360 196 L400 280 L400 900 Q400 950 350 950 L250 950 Q200 950 200 900 L200 280 Z"
+        fill="url(#shine)"/>
+  <path d="M240 196 L360 196 L400 280 L400 900 Q400 950 350 950 L250 950 Q200 950 200 900 L200 280 Z"
+        fill="none" stroke="#E8FBFF" stroke-width="5" opacity="0.7"/>
+
+  <!-- Etikett mit Slab-Logo -->
+  <rect x="218" y="420" width="164" height="300" rx="20" fill="#07222B" opacity="0.92"/>
+  <rect x="218" y="420" width="164" height="300" rx="20" fill="none" stroke="#8FE8E8" stroke-width="3" opacity="0.6"/>
+  <!-- Krone -->
+  <path d="M258 480 L272 460 L286 476 L300 452 L314 476 L328 460 L342 480 L336 492 L264 492 Z"
+        fill="none" stroke="#E8F6FF" stroke-width="5" stroke-linejoin="round"/>
+  <!-- Schriftzug -->
+  <text x="300" y="590" text-anchor="middle" font-family="Georgia, serif" font-size="72"
+        font-weight="900" font-style="italic" fill="#F2FAFF">Slab</text>
+  <!-- Geodreieck -->
+  <path d="M272 660 L328 660 L300 630 Z" fill="none" stroke="#8FD5F5" stroke-width="4" opacity="0.85"/>
+  <text x="300" y="700" text-anchor="middle" font-family="Helvetica, sans-serif" font-size="16"
+        letter-spacing="6" fill="#BFE6F7" opacity="0.8">STEAM LAB</text>
+
+  <!-- Füllstands-Markierungen -->
+  <g stroke="#E8FBFF" stroke-width="3" opacity="0.5">
+    <line x1="378" y1="780" x2="398" y2="780"/>
+    <line x1="378" y1="830" x2="398" y2="830"/>
+    <line x1="378" y1="880" x2="398" y2="880"/>
+  </g>
+</svg>
