@@ -98,6 +98,25 @@ export default function RefillSection({ onActive, onAddBottle }: RefillSectionPr
             <FlaskConical size={14} />
             Sorte anklicken und direkt in den Warenkorb legen · {BOTTLE_PRICE} € / Flasche
           </p>
+
+          {/* So funktioniert das Nachfüllen */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false, amount: 0.1 }}
+            transition={{ duration: 1, delay: 0.8 }}
+            className="mt-8 overflow-hidden rounded-2xl bg-white shadow-2xl"
+          >
+            <img
+              src="/images/vape-pod.png"
+              alt="So wird der Pod nachgefüllt: Pod abziehen, drehen, Liquid einfüllen"
+              className="mx-auto max-h-40 w-auto object-contain p-3 md:max-h-48"
+              loading="lazy"
+            />
+            <p className="bg-[#07222B] px-4 py-2.5 text-center text-[11px] font-light tracking-wider text-white/80 uppercase">
+              Pod abziehen · Liquid einfüllen · Platz für 2 Liquids
+            </p>
+          </motion.div>
         </motion.div>
       </div>
     </section>

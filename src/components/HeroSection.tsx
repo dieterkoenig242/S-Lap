@@ -16,7 +16,7 @@ const features = [
 
 export default function HeroSection({ onActive }: HeroSectionProps) {
   const { ref, inView } = useInView({ threshold: 0.5 });
-  const [logoSrc, setLogoSrc] = useState('/images/logo.png');
+  const [logoSrc, setLogoSrc] = useState('/images/logo.webp');
   const [logoFailed, setLogoFailed] = useState(false);
 
   useEffect(() => {
@@ -42,12 +42,12 @@ export default function HeroSection({ onActive }: HeroSectionProps) {
           <motion.img
             src={logoSrc}
             onError={() =>
-              logoSrc === '/images/logo.png'
+              logoSrc === '/images/logo.webp'
                 ? setLogoSrc('/images/logo.svg')
                 : setLogoFailed(true)
             }
             alt="Slab Logo"
-            className="h-[40dvh] w-auto object-contain drop-shadow-2xl md:h-[48vh]"
+            className="h-[40dvh] w-auto object-contain mix-blend-screen drop-shadow-2xl md:h-[48vh]"
             animate={{ y: [0, -12, 0] }}
             transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
           />

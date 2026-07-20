@@ -36,7 +36,7 @@ export const flavors: Flavor[] = [
     theme: 'dark',
     accent: '#B4E062',
     particleColors: ['#B4E062', '#E63950', '#FFD166', '#7ED957'],
-    image: '/images/flavors/kiwi-erdbeere.jpg',
+    image: '/images/flavors/kiwi-erdbeere.webp',
     imageFallback: '/images/flavors/kiwi-erdbeere.svg',
   },
   {
@@ -48,10 +48,10 @@ export const flavors: Flavor[] = [
     description:
       'Kühle Wassermelone verschmilzt mit\nsüßer Honigmelone zu einer Illusion aus Frische.\n\nSo gut, dass du sie kaum glauben wirst.',
     gradient: 'radial-gradient(circle at center, #FFF0CE 0%, #E0B36A 45%, #6E4A1C 100%)',
-    theme: 'light',
+    theme: 'dark',
     accent: '#8A5A1E',
     particleColors: ['#FFD98E', '#F2B96B', '#FF6B6B', '#A8D96C'],
-    image: '/images/flavors/fata-morgana.jpg',
+    image: '/images/flavors/fata-morgana.webp',
     imageFallback: '/images/flavors/fata-morgana.svg',
   },
   {
@@ -66,7 +66,7 @@ export const flavors: Flavor[] = [
     theme: 'dark',
     accent: '#C77DFF',
     particleColors: ['#C77DFF', '#9D4EDD', '#5A189A', '#E0AAFF'],
-    image: '/images/flavors/black-berry.jpg',
+    image: '/images/flavors/black-berry.webp',
     imageFallback: '/images/flavors/black-berry.svg',
   },
   {
@@ -81,7 +81,7 @@ export const flavors: Flavor[] = [
     theme: 'dark',
     accent: '#CFE372',
     particleColors: ['#CFE372', '#D9A441', '#8C2F39', '#F2E8C9'],
-    image: '/images/flavors/apfel-berry.jpg',
+    image: '/images/flavors/apfel-berry.webp',
     imageFallback: '/images/flavors/apfel-berry.svg',
   },
   {
@@ -96,7 +96,7 @@ export const flavors: Flavor[] = [
     theme: 'dark',
     accent: '#FF4FA0',
     particleColors: ['#FF4FA0', '#4FC3F7', '#E91E8C', '#7986CB'],
-    image: '/images/flavors/doppelbass.jpg',
+    image: '/images/flavors/doppelbass.webp',
     imageFallback: '/images/flavors/doppelbass.svg',
   },
   {
@@ -108,10 +108,10 @@ export const flavors: Flavor[] = [
     description:
       'Klarer Menthol-Frost trifft auf heißen Dampf –\nwie ein Aufguss in der Eissauna.\n\nAtme ein. Frier durch. Genieß es.',
     gradient: 'radial-gradient(circle at center, #EAFBFF 0%, #9FD4E8 45%, #16455A 100%)',
-    theme: 'light',
+    theme: 'dark',
     accent: '#0E6B8C',
     particleColors: ['#FFFFFF', '#B3E5FC', '#81D4FA', '#E1F5FE'],
-    image: '/images/flavors/menthol.jpg',
+    image: '/images/flavors/menthol.webp',
     imageFallback: '/images/flavors/menthol.svg',
   },
 ];
